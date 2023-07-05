@@ -1,0 +1,1070 @@
+[TerminalIPythonApp] WARNING | File '/Users/emil/miniforge3/envs/googleapi/Notebooks/Analytics/GoogleSearchConsole_fetchdata.py' doesn't exist
+Script started: 2023-06-15_07:01:05
+
+
+Last date saved: 2023-06-11
+
+
+Fetching new data, starting: 2023-06-12
+up to and including: 2023-06-12
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/Notebooks/Search_Console/GoogleSearchConsole_fetchdata.py:154[0m
+[1;32m    151[0m df[38;5;241m.[39mset_index([38;5;124m'[39m[38;5;124mindex[39m[38;5;124m'[39m,inplace[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[1;32m    153[0m [38;5;66;03m# new df from the column of lists[39;00m
+[0;32m--> 154[0m df_split [38;5;241m=[39m pd[38;5;241m.[39mDataFrame([43mdf[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mkeys[39;49m[38;5;124;43m'[39;49m[43m][49m[38;5;241m.[39mtolist(), columns[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mdate[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mpage[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mdevice[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mquery[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mcountry[39m[38;5;124m"[39m])
+[1;32m    155[0m [38;5;66;03m# concat df and split_df[39;00m
+[1;32m    156[0m df_split[[38;5;124m'[39m[38;5;124mindex[39m[38;5;124m'[39m] [38;5;241m=[39m df_split[38;5;241m.[39mreset_index()[38;5;241m.[39mindex
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-15_13:47:51
+
+
+Last date saved: 2023-05-31
+
+
+Fetching new data, starting: 2023-06-01
+up to and including: 2023-06-12
+(27121, 16)
+Fetched data until 2023-06-11
+Written to latestDate.txt
+
+
+Script finished: 2023-06-15_13:47:55
+
+
+--------------------------------------------------------------------------------
+
+
+Script started: 2023-06-15_23:01:07
+
+
+Last date saved: 2023-06-11
+
+
+Fetching new data, starting: 2023-06-12
+up to and including: 2023-06-12
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/Notebooks/Search_Console/GoogleSearchConsole_fetchdata.py:154[0m
+[1;32m    151[0m df[38;5;241m.[39mset_index([38;5;124m'[39m[38;5;124mindex[39m[38;5;124m'[39m,inplace[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[1;32m    153[0m [38;5;66;03m# new df from the column of lists[39;00m
+[0;32m--> 154[0m df_split [38;5;241m=[39m pd[38;5;241m.[39mDataFrame([43mdf[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mkeys[39;49m[38;5;124;43m'[39;49m[43m][49m[38;5;241m.[39mtolist(), columns[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mdate[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mpage[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mdevice[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mquery[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mcountry[39m[38;5;124m"[39m])
+[1;32m    155[0m [38;5;66;03m# concat df and split_df[39;00m
+[1;32m    156[0m df_split[[38;5;124m'[39m[38;5;124mindex[39m[38;5;124m'[39m] [38;5;241m=[39m df_split[38;5;241m.[39mreset_index()[38;5;241m.[39mindex
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-20_23:01:04
+
+
+Last date saved: 2023-06-16
+
+
+Fetching new data, starting: 2023-06-17
+up to and including: 2023-06-17
+(3026, 11)
+
+
+Fetched data until 2023-06-17
+Written to latestDate.txt
+
+
+Script finished: 2023-06-20_23:01:05
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.08 s, sys: 289 ms, total: 1.37 s
+Wall time: 3 s
+Script started: 2023-06-21_23:01:04
+
+
+Last date saved: 2023-06-17
+
+
+Fetching new data, starting: 2023-06-18
+up to and including: 2023-06-18
+(2227, 11)
+
+
+Fetched data until 2023-06-18
+Written to latestDate.txt
+
+
+Script finished: 2023-06-21_23:01:05
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.13 s, sys: 352 ms, total: 1.48 s
+Wall time: 2.97 s
+Script started: 2023-06-22_12:37:35
+
+
+Last date saved: 2023-06-18
+
+
+Fetching new data, starting: 2023-06-19
+up to and including: 2023-06-19
+(1772, 11)
+
+
+Fetched data until 2023-06-19
+Written to latestDate.txt
+
+
+Script finished: 2023-06-22_12:37:35
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 414 ms, sys: 124 ms, total: 538 ms
+Wall time: 2.11 s
+Script started: 2023-06-22_12:37:41
+
+
+Last date saved: 2023-06-19
+
+
+Fetching new data, starting: 2023-06-20
+up to and including: 2023-06-19
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-22_12:38:23
+
+
+Last date saved: 2023-06-19
+
+
+Fetching new data, starting: 2023-06-20
+up to and including: 2023-06-19
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-22_23:01:02
+
+
+Last date saved: 2023-06-19
+
+
+Fetching new data, starting: 2023-06-20
+up to and including: 2023-06-19
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-23_23:01:03
+
+
+Last date saved: 2023-06-19
+
+
+Fetching new data, starting: 2023-06-20
+up to and including: 2023-06-20
+(3445, 11)
+
+
+Fetched data until 2023-06-20
+Written to latestDate.txt
+
+
+Script finished: 2023-06-23_23:01:04
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.2 s, sys: 329 ms, total: 1.53 s
+Wall time: 3 s
+Script started: 2023-06-24_20:14:26
+
+
+Last date saved: 2023-06-20
+
+
+Fetching new data, starting: 2023-06-21
+up to and including: 2023-06-21
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m<timed exec>:174[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-24_20:14:48
+
+
+Last date saved: 2023-06-20
+
+
+Fetching new data, starting: 2023-06-21
+up to and including: 2023-06-21
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m<timed exec>:174[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-24_20:15:28
+
+
+Last date saved: 2023-06-20
+
+
+Fetching new data, starting: 2023-06-21
+up to and including: 2023-06-21
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m<timed exec>:174[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-24_23:01:05
+
+
+Last date saved: 2023-06-20
+
+
+Fetching new data, starting: 2023-06-21
+up to and including: 2023-06-21
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m<timed exec>:174[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-25_03:01:09
+
+
+Last date saved: 2023-06-20
+
+
+Fetching new data, starting: 2023-06-21
+up to and including: 2023-06-22
+(1669, 11)
+
+
+Fetched data until 2023-06-21
+Written to latestDate.txt
+
+
+Script finished: 2023-06-25_03:01:10
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 373 ms, sys: 87.8 ms, total: 461 ms
+Wall time: 1.54 s
+Script started: 2023-06-25_07:01:03
+
+
+Last date saved: 2023-06-21
+
+
+Fetching new data, starting: 2023-06-22
+up to and including: 2023-06-22
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3652[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3651[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3652[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7080[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7088[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'keys'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m<timed exec>:174[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/frame.py:3761[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
+[1;32m   3759[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   3760[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[0;32m-> 3761[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[1;32m   3762[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[1;32m   3763[0m     indexer [38;5;241m=[39m [indexer]
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/indexes/base.py:3654[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3652[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_engine[38;5;241m.[39mget_loc(casted_key)
+[1;32m   3653[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m-> 3654[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3655[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3656[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3657[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3658[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3659[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'keys'
+Script started: 2023-06-25_18:15:20
+
+
+Last date saved: 2023-06-21
+
+
+Fetching new data, starting: 2023-06-22
+up to and including: 2023-06-22
+(1861, 11)
+
+
+Fetched data until 2023-06-22
+Written to latestDate.txt
+
+
+Script finished: 2023-06-25_18:15:21
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 416 ms, sys: 111 ms, total: 527 ms
+Wall time: 1.68 s
+Script started: 2023-06-25_18:15:26
+
+
+Last date saved: 2023-06-22
+
+
+Fetching new data, starting: 2023-06-23
+up to and including: 2023-06-22
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-26_00:26:56
+
+
+Last date saved: 2023-06-22
+
+
+Fetching new data, starting: 2023-06-23
+up to and including: 2023-06-23
+(1636, 11)
+
+
+Fetched data until 2023-06-23
+Written to latestDate.txt
+
+
+Script finished: 2023-06-26_00:26:56
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 368 ms, sys: 95.5 ms, total: 464 ms
+Wall time: 1.57 s
+Script started: 2023-06-26_01:57:24
+
+
+Last date saved: 2023-06-23
+
+
+Fetching new data, starting: 2023-06-24
+up to and including: 2023-06-23
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-26_23:01:02
+
+
+Last date saved: 2023-06-23
+
+
+Fetching new data, starting: 2023-06-24
+up to and including: 2023-06-23
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-27_03:40:56
+
+
+Last date saved: 2023-06-23
+
+
+Fetching new data, starting: 2023-06-24
+up to and including: 2023-06-24
+(1501, 11)
+
+
+Fetched data until 2023-06-24
+Written to latestDate.txt
+
+
+Script finished: 2023-06-27_03:40:56
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 361 ms, sys: 82.7 ms, total: 444 ms
+Wall time: 1.53 s
+Script started: 2023-06-27_03:41:00
+
+
+Last date saved: 2023-06-24
+
+
+Fetching new data, starting: 2023-06-25
+up to and including: 2023-06-24
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-27_23:01:02
+
+
+Last date saved: 2023-06-24
+
+
+Fetching new data, starting: 2023-06-25
+up to and including: 2023-06-24
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-06-29_23:01:04
+
+
+Last date saved: 2023-06-24
+
+
+Fetching new data, starting: 2023-06-25
+up to and including: 2023-06-26
+(6387, 11)
+
+
+Fetched data until 2023-06-26
+Written to latestDate.txt
+
+
+Script finished: 2023-06-29_23:01:05
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.25 s, sys: 421 ms, total: 1.67 s
+Wall time: 3.43 s
+Script started: 2023-06-30_23:01:03
+
+
+Last date saved: 2023-06-26
+
+
+Fetching new data, starting: 2023-06-27
+up to and including: 2023-06-27
+(1868, 11)
+
+
+Fetched data until 2023-06-27
+Written to latestDate.txt
+
+
+Script finished: 2023-06-30_23:01:04
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.05 s, sys: 342 ms, total: 1.39 s
+Wall time: 2.91 s
+Script started: 2023-07-01_23:01:06
+
+
+Last date saved: 2023-06-27
+
+
+Fetching new data, starting: 2023-06-28
+up to and including: 2023-06-28
+(2192, 11)
+
+
+Fetched data until 2023-06-28
+Written to latestDate.txt
+
+
+Script finished: 2023-07-01_23:01:07
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.18 s, sys: 426 ms, total: 1.61 s
+Wall time: 3.73 s
+Script started: 2023-07-02_07:01:04
+
+
+Last date saved: 2023-06-28
+
+
+Fetching new data, starting: 2023-06-29
+up to and including: 2023-06-29
+(3351, 11)
+
+
+Fetched data until 2023-06-29
+Written to latestDate.txt
+
+
+Script finished: 2023-07-02_07:01:06
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.24 s, sys: 406 ms, total: 1.65 s
+Wall time: 3.78 s
+Script started: 2023-07-02_23:01:05
+
+
+Last date saved: 2023-06-29
+
+
+Fetching new data, starting: 2023-06-30
+up to and including: 2023-06-29
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-07-03_07:01:03
+
+
+Last date saved: 2023-06-29
+
+
+Fetching new data, starting: 2023-06-30
+up to and including: 2023-06-30
+(2060, 11)
+
+
+Fetched data until 2023-06-30
+Written to latestDate.txt
+
+
+Script finished: 2023-07-03_07:01:04
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.18 s, sys: 332 ms, total: 1.51 s
+Wall time: 3.04 s
+Script started: 2023-07-03_23:01:05
+
+
+Last date saved: 2023-06-30
+
+
+Fetching new data, starting: 2023-07-01
+up to and including: 2023-06-30
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-07-04_07:01:03
+
+
+Last date saved: 2023-06-30
+
+
+Fetching new data, starting: 2023-07-01
+up to and including: 2023-07-01
+(1919, 11)
+
+
+Fetched data until 2023-07-01
+Written to latestDate.txt
+
+
+Script finished: 2023-07-04_07:01:04
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 1.03 s, sys: 306 ms, total: 1.33 s
+Wall time: 2.48 s
+Script started: 2023-07-04_23:01:04
+
+
+Last date saved: 2023-07-01
+
+
+Fetching new data, starting: 2023-07-02
+up to and including: 2023-07-01
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mHttpError[0m                                 Traceback (most recent call last)
+File [0;32m<timed exec>:150[0m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[1;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[0;32m--> 130[0m [38;5;28;01mreturn[39;00m [43mwrapped[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Users/emil/miniforge3/envs/googleapi/lib/python3.11/site-packages/googleapiclient/http.py:938[0m, in [0;36mHttpRequest.execute[0;34m(self, http, num_retries)[0m
+[1;32m    936[0m     callback(resp)
+[1;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[1;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[0;31mHttpError[0m: <HttpError 400 when requesting https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fadvokatfamiljforsvar.se/searchAnalytics/query?alt=json returned "Invalid date range defined by startDate and endDate. End date cannot precede the start date.". Details: "[{'message': 'Invalid date range defined by startDate and endDate. End date cannot precede the start date.', 'domain': 'global', 'reason': 'invalidParameter'}]">
+Script started: 2023-07-05_18:31:38
+
+
+Last date saved: 2023-07-01
+
+
+Fetching new data, starting: 2023-07-02
+up to and including: 2023-07-03
+(3420, 11)
+
+
+Fetched data until 2023-07-02
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mPermissionError[0m                           Traceback (most recent call last)
+File [0;32m<timed exec>:253[0m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/core/generic.py:3772[0m, in [0;36mNDFrame.to_csv[0;34m(self, path_or_buf, sep, na_rep, float_format, columns, header, index, index_label, mode, encoding, compression, quoting, quotechar, lineterminator, chunksize, date_format, doublequote, escapechar, decimal, errors, storage_options)[0m
+[1;32m   3761[0m df [38;5;241m=[39m [38;5;28mself[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m([38;5;28mself[39m, ABCDataFrame) [38;5;28;01melse[39;00m [38;5;28mself[39m[38;5;241m.[39mto_frame()
+[1;32m   3763[0m formatter [38;5;241m=[39m DataFrameFormatter(
+[1;32m   3764[0m     frame[38;5;241m=[39mdf,
+[1;32m   3765[0m     header[38;5;241m=[39mheader,
+[0;32m   (...)[0m
+[1;32m   3769[0m     decimal[38;5;241m=[39mdecimal,
+[1;32m   3770[0m )
+[0;32m-> 3772[0m [38;5;28;01mreturn[39;00m [43mDataFrameRenderer[49m[43m([49m[43mformatter[49m[43m)[49m[38;5;241;43m.[39;49m[43mto_csv[49m[43m([49m
+[1;32m   3773[0m [43m    [49m[43mpath_or_buf[49m[43m,[49m
+[1;32m   3774[0m [43m    [49m[43mlineterminator[49m[38;5;241;43m=[39;49m[43mlineterminator[49m[43m,[49m
+[1;32m   3775[0m [43m    [49m[43msep[49m[38;5;241;43m=[39;49m[43msep[49m[43m,[49m
+[1;32m   3776[0m [43m    [49m[43mencoding[49m[38;5;241;43m=[39;49m[43mencoding[49m[43m,[49m
+[1;32m   3777[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[1;32m   3778[0m [43m    [49m[43mcompression[49m[38;5;241;43m=[39;49m[43mcompression[49m[43m,[49m
+[1;32m   3779[0m [43m    [49m[43mquoting[49m[38;5;241;43m=[39;49m[43mquoting[49m[43m,[49m
+[1;32m   3780[0m [43m    [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m
+[1;32m   3781[0m [43m    [49m[43mindex_label[49m[38;5;241;43m=[39;49m[43mindex_label[49m[43m,[49m
+[1;32m   3782[0m [43m    [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   3783[0m [43m    [49m[43mchunksize[49m[38;5;241;43m=[39;49m[43mchunksize[49m[43m,[49m
+[1;32m   3784[0m [43m    [49m[43mquotechar[49m[38;5;241;43m=[39;49m[43mquotechar[49m[43m,[49m
+[1;32m   3785[0m [43m    [49m[43mdate_format[49m[38;5;241;43m=[39;49m[43mdate_format[49m[43m,[49m
+[1;32m   3786[0m [43m    [49m[43mdoublequote[49m[38;5;241;43m=[39;49m[43mdoublequote[49m[43m,[49m
+[1;32m   3787[0m [43m    [49m[43mescapechar[49m[38;5;241;43m=[39;49m[43mescapechar[49m[43m,[49m
+[1;32m   3788[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   3789[0m [43m[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/io/formats/format.py:1186[0m, in [0;36mDataFrameRenderer.to_csv[0;34m(self, path_or_buf, encoding, sep, columns, index_label, mode, compression, quoting, quotechar, lineterminator, chunksize, date_format, doublequote, escapechar, errors, storage_options)[0m
+[1;32m   1165[0m     created_buffer [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[1;32m   1167[0m csv_formatter [38;5;241m=[39m CSVFormatter(
+[1;32m   1168[0m     path_or_buf[38;5;241m=[39mpath_or_buf,
+[1;32m   1169[0m     lineterminator[38;5;241m=[39mlineterminator,
+[0;32m   (...)[0m
+[1;32m   1184[0m     formatter[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mfmt,
+[1;32m   1185[0m )
+[0;32m-> 1186[0m [43mcsv_formatter[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[43m)[49m
+[1;32m   1188[0m [38;5;28;01mif[39;00m created_buffer:
+[1;32m   1189[0m     [38;5;28;01massert[39;00m [38;5;28misinstance[39m(path_or_buf, StringIO)
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/io/formats/csvs.py:240[0m, in [0;36mCSVFormatter.save[0;34m(self)[0m
+[1;32m    236[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m    237[0m [38;5;124;03mCreate the writer & save.[39;00m
+[1;32m    238[0m [38;5;124;03m"""[39;00m
+[1;32m    239[0m [38;5;66;03m# apply compression and byte/text conversion[39;00m
+[0;32m--> 240[0m [38;5;28;01mwith[39;00m [43mget_handle[49m[43m([49m
+[1;32m    241[0m [43m    [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfilepath_or_buffer[49m[43m,[49m
+[1;32m    242[0m [43m    [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmode[49m[43m,[49m
+[1;32m    243[0m [43m    [49m[43mencoding[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mencoding[49m[43m,[49m
+[1;32m    244[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43merrors[49m[43m,[49m
+[1;32m    245[0m [43m    [49m[43mcompression[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcompression[49m[43m,[49m
+[1;32m    246[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m    247[0m [43m[49m[43m)[49m [38;5;28;01mas[39;00m handles:
+[1;32m    248[0m     [38;5;66;03m# Note: self.encoding is irrelevant here[39;00m
+[1;32m    249[0m     [38;5;28mself[39m[38;5;241m.[39mwriter [38;5;241m=[39m csvlib[38;5;241m.[39mwriter(
+[1;32m    250[0m         handles[38;5;241m.[39mhandle,
+[1;32m    251[0m         lineterminator[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mlineterminator,
+[0;32m   (...)[0m
+[1;32m    256[0m         quotechar[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mquotechar,
+[1;32m    257[0m     )
+[1;32m    259[0m     [38;5;28mself[39m[38;5;241m.[39m_save()
+
+File [0;32m~/miniforge3/envs/googleapi/lib/python3.11/site-packages/pandas/io/common.py:859[0m, in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    854[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(handle, [38;5;28mstr[39m):
+[1;32m    855[0m     [38;5;66;03m# Check whether the filename is to be opened in binary mode.[39;00m
+[1;32m    856[0m     [38;5;66;03m# Binary mode does not support 'encoding' and 'newline'.[39;00m
+[1;32m    857[0m     [38;5;28;01mif[39;00m ioargs[38;5;241m.[39mencoding [38;5;129;01mand[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m ioargs[38;5;241m.[39mmode:
+[1;32m    858[0m         [38;5;66;03m# Encoding[39;00m
+[0;32m--> 859[0m         handle [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m
+[1;32m    860[0m [43m            [49m[43mhandle[49m[43m,[49m
+[1;32m    861[0m [43m            [49m[43mioargs[49m[38;5;241;43m.[39;49m[43mmode[49m[43m,[49m
+[1;32m    862[0m [43m            [49m[43mencoding[49m[38;5;241;43m=[39;49m[43mioargs[49m[38;5;241;43m.[39;49m[43mencoding[49m[43m,[49m
+[1;32m    863[0m [43m            [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[1;32m    864[0m [43m            [49m[43mnewline[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    865[0m [43m        [49m[43m)[49m
+[1;32m    866[0m     [38;5;28;01melse[39;00m:
+[1;32m    867[0m         [38;5;66;03m# Binary mode[39;00m
+[1;32m    868[0m         handle [38;5;241m=[39m [38;5;28mopen[39m(handle, ioargs[38;5;241m.[39mmode)
+
+[0;31mPermissionError[0m: [Errno 13] Permission denied: 'output/csv/search_console_from_2023_7.csv'
+Script started: 2023-07-05_18:32:39
+
+
+Last date saved: 2023-06-30
+
+
+Fetching new data, starting: 2023-07-01
+up to and including: 2023-07-03
+(5339, 11)
+
+
+Fetched data until 2023-07-02
+Written to latestDate.txt
+
+
+Script finished: 2023-07-05_18:32:39
+
+
+--------------------------------------------------------------------------------
+
+
+CPU times: user 377 ms, sys: 57.8 ms, total: 434 ms
+Wall time: 1.06 s

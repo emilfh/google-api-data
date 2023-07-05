@@ -1,0 +1,39 @@
+# Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks
+# Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Mac
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
+
+# Ignore outputfiles, too large
+Analytics/output/*
+Search_Console/output/*
+
+# Ignore Python bytecode Cache
+**/__pycache__
+
+# Ignore .zip files (backups of .csv)
+*.zip
+
+# Ignore .json (access tokens)
+*.json
+
+# Ignore .dat (access tokens)
+*.dat
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+
+# End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks
